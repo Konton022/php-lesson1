@@ -1,42 +1,24 @@
 <?php
-    $db = new PDO ('mysql:host=localhost;dbname=mts_test_task', 'root', '' );
-    $db->exec('SET NAMES UTF8');
+    include_once(__DIR__.'/model/db.php');
+
     $sqlInsertCall = "INSERT INTO callTracker (phone, dt_call, duration) VALUES (:phone, :dt_call, :duration)";
-    $sqlSelectCallAll = "SELECT * FROM callTracker";
+    $sqlSelectCalls = "SELECT * FROM callTracker";
     $sqlSelectCallbyId = "SELECT * FROM callTracker WHERE call_id = :call_id";
     
-    function addCall($phone, $duration, $db, $sqlInsertCall) {
-        $mysql_date_now = date("Y-m-d H:i:s");
-        $query = $db->prepare($sqlInsertCall);
-        $params = [
-            'phone' => $phone,
-            'dt_call' => $mysql_date_now,
-            'duration' => $duration
-        ];
-        $query->execute($params);
-    }
-
-    function selectAllCalls($db, $sqlSelectCallAll) {
-        $query = $db->query($sqlSelectCallAll)->fetchAll();
-        
-        return $query;
-    }
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // echo '<pre>';
-        //     print_r($_POST);
-        // echo '</pre>';
-        $phone = $_POST['phone'];
-        // $duration = $_POST['duration'];
-        $duration = rand(1, 1000);
-        addCall($phone, $duration,$db, $sqlInsertCall);
-        
-
-    }
-
-    $calls = selectAllCalls($db, $sqlSelectCallAll);
-
     
+    
+    $query = dbQuery($sqlSelectCalls);
+    $calls = $query->fetchAll();  
+  
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $params = [
+            'phone' => $_POST['phone'],
+            'duration' => rand(1, 1000),
+            'dt_call' => date("Y-m-d H:i:s")
+        ];
+        $insert = dbQuery($sqlInsertCall, $params);
+        header('Location:index.php');
+    }  
 ?>
 <!DOCTYPE html>
 <html lang="en">
