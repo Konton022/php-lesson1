@@ -1,24 +1,16 @@
 <?php
-    include_once(__DIR__.'/model/db.php');
+    include_once(__DIR__.'/model/calls.php');
 
-    $sqlInsertCall = "INSERT INTO callTracker (phone, dt_call, duration) VALUES (:phone, :dt_call, :duration)";
-    $sqlSelectCalls = "SELECT * FROM callTracker";
-    $sqlSelectCallbyId = "SELECT * FROM callTracker WHERE call_id = :call_id";
-    
-    
-    
-    $query = dbQuery($sqlSelectCalls);
-    $calls = $query->fetchAll();  
-  
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $params = [
             'phone' => $_POST['phone'],
             'duration' => rand(1, 1000),
             'dt_call' => date("Y-m-d H:i:s")
         ];
-        $insert = dbQuery($sqlInsertCall, $params);
+        $insert = addCall($params);
         header('Location:index.php');
-    }  
+    } 
+    $calls = getCalls();   
 ?>
 <!DOCTYPE html>
 <html lang="en">
