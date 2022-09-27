@@ -36,12 +36,15 @@
         </tr>
         
             <?php 
-                foreach($calls as $call) {
-
-                    echo "<tr><td>{$call['call_id']}</td><td>{$call['phone']}</td><td>{$call['dt_call']}</td><td>{$call['duration']}</td></tr>";
-                }
-            ?>
-        
+            foreach($calls as $call): ?> 
+                <tr>
+                    <td><?=$call['call_id']?></td>
+                    <td><?=$call['phone']?></td>
+                    <td><?=$call['dt_call']?></td>
+                    <td><?=$call['duration']?></td>
+                </tr>                
+            <?php endforeach; ?>
+            
     </table>
 </body>
 </html>
