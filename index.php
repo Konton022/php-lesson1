@@ -18,7 +18,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Table of Calls</title>
 </head>
 <body>
     <form action="index.php" method="POST">
@@ -27,14 +28,16 @@
         <input type="submit" value="SEND">
     </form>
 
-    <table>
-        <tr>
-            <th>call_id</th>
-            <th>Phone</th>
+    <table class="table table-striped table-hover table-bordered table-sm">
+        <thead>
+            <tr class="">
+            <th>id</th>
+            <th>phone</th>
             <th>datatime</th>
             <th>duration</th>
-        </tr>
-        
+            </tr>
+        </thead>
+        <tbody class="">
             <?php 
             foreach($calls as $call): ?> 
                 <tr>
@@ -44,7 +47,7 @@
                     <td><?=$call['duration']?></td>
                 </tr>                
             <?php endforeach; ?>
-            
+        </tbody>    
     </table>
 </body>
 </html>
