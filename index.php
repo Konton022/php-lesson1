@@ -1,15 +1,16 @@
 <?php
-    include_once(__DIR__.'/model/calls.php');
+    include_once('model/calls.php');
+    include_once('core/arr.php');
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $fields = extractFields($_POST, ['phone']);
         $params = [
-            'phone' => $_POST['phone'],
+            'phone'=> $fields['phone'],
             'duration' => rand(1, 1000),
             'dt_call' => date("Y-m-d H:i:s")
         ];
         $insert = addCall($params);
         header('Location:index.php');
     }
-    print_r($_GET);
     
     $calls = getCalls();  
     
