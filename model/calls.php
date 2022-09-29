@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__.'/db.php');
+include_once('core/db.php');
 
 $sqlSelectCallbyId = "SELECT * FROM callTracker WHERE call_id = :call_id";
 
