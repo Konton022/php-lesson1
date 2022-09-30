@@ -8,11 +8,7 @@
     <title>Table of Calls</title>
 </head>
 <body>
-    <form action="index.php" method="POST">
-        <input type="text" name="phone" id="phone" />
-        <!-- <input type="number" name="duration" id="duration" /> -->
-        <input type="submit" value="SEND">
-    </form>
+    <a href="index.php?page=add"> add new call</a>
 
     <table class="table table-striped table-hover table-bordered table-sm">
         <thead>

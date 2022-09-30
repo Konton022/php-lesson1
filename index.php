@@ -1,18 +1,6 @@
 <?php
-    include_once('model/calls.php');
-    include_once('core/arr.php');
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $fields = extractFields($_POST, ['phone']);
-        $params = [
-            'phone'=> $fields['phone'],
-            'duration' => rand(1, 1000),
-            'dt_call' => date("Y-m-d H:i:s")
-        ];
-        $insert = addCall($params);
-        header('Location:index.php');
-    }
-    
-    $calls = getCalls();  
-    
-    include(__DIR__.'/view/v-index.php');
-?>
+
+$cname = $_GET['page']??'index';
+$path = "controller/$cname.php";
+
+include_once($path);
