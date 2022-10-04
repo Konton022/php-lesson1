@@ -17,6 +17,7 @@
             <th>phone</th>
             <th>datatime</th>
             <th>duration</th>
+            <th>call</th>
             <th>delete</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                     <td><?=$call['phone']?></td>
                     <td><?=$call['dt_call']?></td>
                     <td><?=$call['duration']?></td>
+                    <td><a href="index.php?page=call&id=<?=$call['call_id']?>">read more...</a></td>
                     <td><button class="del-btn" name=<?=$call['call_id']?>>delete</button></td>
                 </tr>                
             <?php endforeach; ?>

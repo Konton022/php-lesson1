@@ -1,6 +1,11 @@
 <?php
-$id = $_GET['id'];
-echo $id;
-getCallbyId($id);
+include_once('model/calls.php');
+include_once('core/arr.php');
 
-include('view/v_call.php');
+$strId = $_GET['id'];
+$id = (int) $strId;
+echo 'hello from call page'.' id= '. $id;
+$oneCall = getOneCallbyId($id);
+print_r($oneCall);
+
+include('view/v_call.php'); 
