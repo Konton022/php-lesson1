@@ -22,10 +22,10 @@
         </thead>
         <tbody>
             <tr>
-                <td><?=$oneCall['call_id']?></td>
-                <td><?=$oneCall['phone']?></td>
-                <td><?=$oneCall['dt_call']?></td>
-                <td><?=$oneCall['duration']?></td>
+                <td><?=$call_id?></td>
+                <td><?=$phone?></td>
+                <td><?=$dt_call?></td>
+                <td><?=$duration?></td>
             </tr>
         </tbody>
 
