@@ -5,9 +5,18 @@ include_once('core/system.php');
 
 $strId = $_GET['id'];
 $id = (int) $strId;
-//echo 'hello from call page'.' id= '. $id;
 $oneCall = getOneCallbyId($id);
 
-renderTemplate('v_call', $oneCall);
+if ($oneCall !== false) {
+    $pageTitle = $oneCall['phone'];
+    $pageContent = renderTemplate('v_call', $oneCall);
+} else {
+    header('HTTP/1.1 404 Not Found');
+    $pageTitle = 'error 404';
+    $pageContent = renderTemplate('v-404');
+}
 
-//include('view/v_call.php'); 
+
+
+
+ 

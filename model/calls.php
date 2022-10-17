@@ -10,7 +10,7 @@ function getCalls(){
     $calls = $query->fetchAll();
     return $calls;
 }
-function getOneCallbyId(int $id): array{
+function getOneCallbyId(int $id){
     //echo 'hello from func';
     $sql= "SELECT * FROM callTracker WHERE call_id=:call_id"; 
     $query = dbQuery($sql, ['call_id' => $id]);

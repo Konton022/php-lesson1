@@ -1,7 +1,6 @@
 <?php
-    include_once('model/calls.php');
-        
+    include_once('model/calls.php');   
     $calls = getCalls();  
-    
-    include('view/v-index.php');
+    $pageTitle = "All calls";
+    $pageContent = renderTemplate('v-calls', ['calls'=>$calls]);
 ?>

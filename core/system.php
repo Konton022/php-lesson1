@@ -6,6 +6,7 @@
  function renderTemplate(string $path, array $vars = []) : string {
    $fullTemplatePath = "view/$path.php";
    extract($vars);
+   ob_start();
    include($fullTemplatePath);
-   return '';
+   return ob_get_clean();
  }
