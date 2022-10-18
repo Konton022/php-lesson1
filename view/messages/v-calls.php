@@ -7,7 +7,7 @@
             <th>datatime</th>
             <th>duration</th>
             <th>call</th>
-            <th>delete</th>
+            
             </tr>
         </thead>
         <tbody class="">

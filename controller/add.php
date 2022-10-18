@@ -15,4 +15,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $pageTitle = "add new call";
-$pageContent = renderTemplate('v-add');
+$pageContent = renderTemplate('messages/v-add');
