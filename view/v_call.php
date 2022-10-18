@@ -17,7 +17,6 @@
             </tr>
         </tbody>
     </table>
-    <a href="index.php">back to home page</a>
 </main>
 
 

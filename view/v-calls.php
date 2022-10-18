@@ -1,5 +1,4 @@
 <main>
-    <a href="index.php?page=add">add new call</a>
     <table class="table table-striped table-hover table-bordered table-sm">
         <thead>
             <tr class="">
@@ -20,7 +19,6 @@
                     <td><?=$call['dt_call']?></td>
                     <td><?=$call['duration']?></td>
                     <td><a href="index.php?page=call&id=<?=$call['call_id']?>">read more...</a></td>
-                    <td><button class="del-btn" name=<?=$call['call_id']?>>delete</button></td>
                 </tr>                
             <?php endforeach; ?>
         </tbody> 
