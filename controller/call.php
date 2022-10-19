@@ -9,7 +9,11 @@ $oneCall = getOneCallbyId($id);
 
 if ($oneCall !== false) {
     $pageTitle = $oneCall['phone'];
-    $pageContent = renderTemplate('messages/v_call', $oneCall);
+    $left = renderTemplate('messages/v_call_left', ['call_id' => $oneCall['call_id']]);
+    $content = renderTemplate('messages/v_call', $oneCall);
+    $pageContent = renderTemplate('base/v_con2col', [
+        'left'=>$left, 'content'=>$content
+    ]);
 } else {
     header('HTTP/1.1 404 Not Found');
     $pageTitle = 'error 404';
