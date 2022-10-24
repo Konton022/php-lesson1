@@ -9,12 +9,17 @@ $oneCall = getOneCallbyId($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    var_dump($_POST);
-
-    $del_id = extractFields($_POST, ['del_id']);
-    delCall($del_id);
-    header('Location:index.php');
+    $del_id = $_POST['del_id'];
+    $delIndex = delCall($del_id);
+    
+    if ($delIndex) {
+        header('Location:index.php');
+    }  else {
+        alarm('somethink went wrong');
+    }    
 }
+    
+
 
 if ($oneCall !== false) {
     $pageTitle = $oneCall['phone'];
