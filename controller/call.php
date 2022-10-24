@@ -7,6 +7,15 @@ $strId = $_GET['id'];
 $id = (int) $strId;
 $oneCall = getOneCallbyId($id);
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    var_dump($_POST);
+
+    $del_id = extractFields($_POST, ['del_id']);
+    delCall($del_id);
+    header('Location:index.php');
+}
+
 if ($oneCall !== false) {
     $pageTitle = $oneCall['phone'];
     $left = renderTemplate('messages/v_call_left', ['call_id' => $oneCall['call_id']]);

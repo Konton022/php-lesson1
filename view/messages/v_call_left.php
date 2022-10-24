@@ -1,4 +1,4 @@
 
 <form class="form m-3" action="" method="post">
-    <input type="submit" class="form-control btn-secondary" value="delete" name=<?=$call_id?>>
+    <button type="submit" class="form-control btn-secondary" value="<?=$call_id?>" name='del_id'>Delete</button>
 </form>

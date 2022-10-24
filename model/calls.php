@@ -23,3 +23,10 @@ function addCall($params){
     $query = dbQuery($sql, $params);
     return true;
 }
+
+function delCall($id) {
+    $sql = "DELETE FROM callTracker WHERE call_id=:call_id";
+    $query = dbQuery($sql, ['call_id'=> $id]);
+    $query->fetch();
+    return true;
+}
