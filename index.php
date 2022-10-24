@@ -1,5 +1,7 @@
 <?php
-include_once('core/system.php');
+include_once('init.php');
+// include_once('core/system.php');
+
 $cname = $_GET['page']??'index';
 $path = "controller/$cname.php";
 $pageTitle = "error 404";

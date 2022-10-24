@@ -1,7 +1,4 @@
 <?php
-    include_once('model/calls.php');
-    include_once('core/arr.php');
-    include_once('core/system.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fields = extractFields($_POST, ['phone']);
