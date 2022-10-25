@@ -1,9 +1,5 @@
 <?php
 
-include_once('core/db.php');
-
-
-
 function getCalls(){
     $sql = "SELECT * FROM callTracker";
     $query = dbQuery($sql);
