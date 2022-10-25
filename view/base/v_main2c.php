@@ -32,7 +32,10 @@
     <div class="container">
         <h1><?=$pageH1?></h1>
         <main>
-            <?=$content?>
+            <div class="row">
+                <div class="col col-4"><?=$pageLeft?></div>
+                <div class="col col-8"><?=$content?></div>
+            </div>
         </main>
     </div>
 

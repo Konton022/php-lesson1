@@ -1,4 +1,4 @@
-<main>
+
     <table class="table table-striped table-hover table-bordered table-sm">
         <thead>
             <tr class="">
@@ -23,4 +23,4 @@
             <?php endforeach; ?>
         </tbody> 
     </table>
-</main>   
+  
