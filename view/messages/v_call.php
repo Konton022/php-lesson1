@@ -5,6 +5,7 @@
             <th>phone</th>
             <th>datatime</th>
             <th>duration</th>
+            <th>edit</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
             <td><?=$phone?></td>
             <td><?=$dt_call?></td>
             <td><?=$duration?></td>
+            <td><a href="http:index.php?page=edit&id=<?=$call_id?>" class="btn btn-primary btn-sm">edit</a></td>
         </tr>
     </tbody>
 </table>

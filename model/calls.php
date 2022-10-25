@@ -25,3 +25,9 @@ function delCall($id) {
     $query = dbQuery($sql, ['call_id'=> $id]);
     return true;
 }
+
+function editCall($params){
+    $sql = "UPDATE callTracker SET phone = :phone WHERE call_id = :call_id";
+    $query = dbQuery($sql, $params);
+    return true;
+}
