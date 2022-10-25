@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $del_id = $_POST['del_id'];
     $delIndex = delCall($del_id);
     
-    if ($delIndex) {
+    if ($del_id) {
         header('Location:index.php');
     }  else {
         alarm('somethink went wrong');
