@@ -1,18 +1,17 @@
 <?php
 $editMessage = [];
+$id = $_GET['id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // $fields = extractFields($_POST, ['phone']);
-    // $params = [
-    //     'phone'=> $fields['phone'],
-    //     'duration' => rand(1, 1000),
-    //     'dt_call' => date("Y-m-d H:i:s")
-    // ];
-    // $insert = addCall($params);
-    // header('Location:index.php');
+    $fields = extractFields($_POST, ['edit']);
+    $params = [
+        'phone'=> $fields['edit'],
+        'call_id' => $id,
+    ];
+    editCall($params);
+    header('Location:index.php');
 } else {
-	$id = $_GET['id'];
+
 	$editMessage = getOneCallbyId($id);
-	var_dump($editMessage);
 }
 
 $pageTitle = "edit call";
