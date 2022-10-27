@@ -14,7 +14,7 @@
             <td><?=$phone?></td>
             <td><?=$dt_call?></td>
             <td><?=$duration?></td>
-            <td><a href="http:index.php?page=edit&id=<?=$call_id?>" class="btn btn-primary btn-sm">edit</a></td>
+            <td><a href="<?=BASE_URL?>edit/<?=URL_PARAMS[1]?>" class="btn btn-primary btn-sm">edit</a></td>
         </tr>
     </tbody>
 </table>
