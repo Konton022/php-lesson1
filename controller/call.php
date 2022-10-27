@@ -1,6 +1,6 @@
 <?php
 
-$strId = $_GET['id'];
+$strId = URL_PARAMS[1];
 $id = (int) $strId;
 $oneCall = getOneCallbyId($id);
 
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $delIndex = delCall($del_id);
     
     if (isset($del_id)) {
-        header('Location:index.php');
+        header('Location:'.BASE_URL);
     }  else {
         alarm('somethink went wrong');
     }    

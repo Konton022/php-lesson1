@@ -1,10 +1,12 @@
 <?php
 
-    var_dump($_GET);
     
+
     include_once('init.php');
 
-    $cname = $_GET['page']??'index';
+    define('URL_PARAMS', parseUrl($_GET['querysystemurl']));
+    var_dump(URL_PARAMS);
+    $cname = URL_PARAMS[0]??'index';
     $path = "controller/$cname.php";
     $pageTitle = "error 404";
     $pageContent = "";

@@ -1,6 +1,6 @@
 <?php
 $editMessage = [];
-$id = $_GET['id'];
+$id = URL_PARAMS[1];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fields = extractFields($_POST, ['edit']);
     $params = [
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'call_id' => $id,
     ];
     editCall($params);
-    header('Location:index.php');
+    header('Location:'.BASE_URL);
 } else {
 
 	$editMessage = getOneCallbyId($id);
