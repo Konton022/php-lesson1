@@ -1,4 +1,7 @@
 <?php
+
+    var_dump($_GET);
+    
     include_once('init.php');
 
     $cname = $_GET['page']??'index';

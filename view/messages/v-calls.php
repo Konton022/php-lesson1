@@ -18,7 +18,7 @@
                     <td><?=$call['phone']?></td>
                     <td><?=$call['dt_call']?></td>
                     <td><?=$call['duration']?></td>
-                    <td><a href="index.php?page=call&id=<?=$call['call_id']?>">read more...</a></td>
+                    <td><a href="<?=BASE_URL?>call/<?=$call['call_id']?>">read more...</a></td>
                 </tr>                
             <?php endforeach; ?>
         </tbody> 

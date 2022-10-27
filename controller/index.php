@@ -1,5 +1,5 @@
 <?php
- 
+    
     $calls = getCalls();  
     $pageTitle = "All calls";
     $pageH1 = "All calls";
