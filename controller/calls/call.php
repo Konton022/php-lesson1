@@ -1,7 +1,6 @@
 <?php
 
-$strId = URL_PARAMS[1];
-$id = (int) $strId;
+$id = (int) URL_PARAMS['id'];
 $oneCall = getOneCallbyId($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -27,8 +27,15 @@
   ];
 
   foreach ($routes as $route) {
-    if (preg_match($route['test'], $url)){
+    $matches = [];
+    if (preg_match($route['test'], $url, $matches)){
+      // var_dump($matches);
       $res['controller'] = $route['controller'];
+
+      foreach($route['params'] as $name => $num){
+        $res['params'][$name] = $matches[$num];
+      }
+
       break;
     }
   }

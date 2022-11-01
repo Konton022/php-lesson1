@@ -18,7 +18,8 @@ return [
         'controller' => 'calls/edit'
     ],
     [
-        'test' => '/^call$/',
-        'controller' => 'calls/call'
+        'test' => '/^call\/([1-9]+\d*)$/',
+        'controller' => 'calls/call',
+        'params' => ['id' => 1]
     ],
 ];

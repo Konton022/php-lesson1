@@ -7,12 +7,11 @@
     $routes = include('routes.php');
     $resRouter = routeUrl($url, $routes);
     
-    var_dump($resRouter);
-
     $cname = $resRouter['controller'] ?? 'index';
-    $path = "controller/$cname.php";
+    define('URL_PARAMS', $resRouter['params']);
+    var_dump(URL_PARAMS);
 
-    print_r($path);
+    $path = "controller/$cname.php";
     
     $pageTitle = "error 404";
     $pageContent = "";
