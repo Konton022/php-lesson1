@@ -31,11 +31,14 @@
     if (preg_match($route['test'], $url, $matches)){
       // var_dump($matches);
       $res['controller'] = $route['controller'];
-
-      foreach($route['params'] as $name => $num){
-        $res['params'][$name] = $matches[$num];
+      
+      if (isset($route['params'])){
+        foreach($route['params'] as $name => $num){
+          $res['params'][$name] = $matches[$num];
+        }
+  
       }
-
+      
       break;
     }
   }
