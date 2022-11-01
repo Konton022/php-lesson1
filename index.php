@@ -2,14 +2,13 @@
 
     include_once('init.php');
 
-    //define('URL_PARAMS', parseUrl($_GET['querysystemurl']));
     $url = $_GET['querysystemurl'] ?? '';
     $routes = include('routes.php');
     $resRouter = routeUrl($url, $routes);
     
     $cname = $resRouter['controller'] ?? 'index';
     define('URL_PARAMS', $resRouter['params']);
-    var_dump(URL_PARAMS);
+    //var_dump(URL_PARAMS);
 
     $path = "controller/$cname.php";
     

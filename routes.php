@@ -3,19 +3,23 @@
 return [
     [
         'test' => '/^$/',
-        'controller' => 'calls/index'
+        'controller' => 'calls/index',
+        'params' => []
     ],
     [
         'test' => '/^add$/',
-        'controller' => 'calls/add'
+        'controller' => 'calls/add',
+        'params' => []
     ],
     [
         'test' => '/^contacts$/',
-        'controller' => 'contacts/contacts'
+        'controller' => 'contacts/contacts',
+        'params' => []
     ],
     [
-        'test' => '/^edit$/',
-        'controller' => 'calls/edit'
+        'test' => '/^edit\/([1-9]+\d*)$/',
+        'controller' => 'calls/edit',
+        'params' => ['id' => 1]
     ],
     [
         'test' => '/^call\/([1-9]+\d*)$/',

@@ -1,6 +1,6 @@
 <?php
 $editMessage = [];
-$id = URL_PARAMS[1];
+$id = URL_PARAMS['id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fields = extractFields($_POST, ['edit']);
     $params = [
