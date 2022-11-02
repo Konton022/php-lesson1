@@ -1,14 +1,15 @@
 <?php
-
+    session_start();
+    var_dump($_SESSION);
     include_once('init.php');
-
+       
     $url = $_GET['querysystemurl'] ?? '';
     $routes = include('routes.php');
     $resRouter = routeUrl($url, $routes);
     
     $cname = $resRouter['controller'] ?? 'index';
     define('URL_PARAMS', $resRouter['params']);
-    //var_dump(URL_PARAMS);
+    
 
     $path = "controller/$cname.php";
     

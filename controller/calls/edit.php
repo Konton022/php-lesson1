@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'call_id' => $id,
     ];
     editCall($params);
+    $_SESSION['call.edit'] = true;
     header('Location:'.BASE_URL);
 } else {
 
