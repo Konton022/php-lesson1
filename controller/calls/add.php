@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'dt_call' => date("Y-m-d H:i:s")
     ];
     $insert = addCall($params);
-    header('Location:index.php');
+    $_SESSION['call.added'] = true;
+    header('Location:'.BASE_URL);
 }
 
 $pageTitle = "add new call";

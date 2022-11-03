@@ -31,6 +31,7 @@
     </nav>
     <div class="container">
         <h1><?=$pageH1?></h1>
+      
         <main>
             <?=$content?>
         </main>
