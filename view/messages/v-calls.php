@@ -1,10 +1,10 @@
 
 <div>    
-    <? if($callAdded === true): ?>
+    <?php if($callAdded === true): ?>
          <div class="alert alert-success">
             The Call was added to db
          </div>
-    <? endif; ?> 
+    <?php endif; ?> 
     <table class="table table-striped table-hover table-bordered table-sm">
         <thead>
             <tr class="">
