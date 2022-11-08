@@ -1,6 +1,6 @@
 <?php
     session_start();
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     include_once('init.php');
        
     $url = $_GET['querysystemurl'] ?? '';
@@ -8,9 +8,8 @@
     $resRouter = routeUrl($url, $routes);
     
     $cname = $resRouter['controller'] ?? 'index';
-    define('URL_PARAMS', $resRouter['params']);
     
-
+    define('URL_PARAMS', $resRouter['params']);
     $path = "controller/$cname.php";
     
     $pageTitle = "error 404";

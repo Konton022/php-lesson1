@@ -9,24 +9,24 @@
 </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
-        <div class="container-fluid ">
-            <a class="navbar-brand" href="#">Calls</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?=BASE_URL?>">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?=BASE_URL?>add">Add new call</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?=BASE_URL?>contacts">Contacts</a>
-                </li>
+        <div class="container-fluid d-flex">           
+                <a class="navbar-brand" href="#">Calls</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?=BASE_URL?>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>add">Add new call</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=BASE_URL?>contacts">Contacts</a>
+                    </li>
                 </ul>
-            </div>
+                <a class="btn btn-primary " href="<?=BASE_URL?>login">login</a>            
         </div>
     </nav>
     <div class="container">
