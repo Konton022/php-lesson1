@@ -8,12 +8,12 @@
         $remenber = isset($_POST['remember']);
         
         $user = getUser($login);
-        var_dump($user);
-        if(isset($user) && password_verify($password == $user['password'])){
+        
+        if(isset($user) && password_verify($password, $user['password'])){
             $errFlag = false;
-            echo 'login good'
-        }) else {
-
+            echo 'login good';
+        } else {
+            echo 'wrong login';
         }
 
     } else {
