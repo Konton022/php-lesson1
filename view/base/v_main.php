@@ -8,7 +8,7 @@
     <title><?=$title?></title>
 </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary d-flex flex-row justify-content-between">
         <div class="container-fluid d-flex">           
                 <a class="navbar-brand" href="#">Calls</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,15 @@
                         <a class="nav-link" href="<?=BASE_URL?>contacts">Contacts</a>
                     </li>
                 </ul>
-                <a class="btn btn-primary " href="<?=BASE_URL?>login">login</a>            
+                           
+        </div>
+        <div>
+            <?php if(!is_null($user)): ?>
+                <span class="text-white">Hello <?=$user["name"]?></span>
+                <a class="btn btn-primary mx-3" href="<?=BASE_URL?>logout">logout</a>
+            <?php else: ?>    
+                <a class="btn btn-primary " href="<?=BASE_URL?>login">login</a>
+            <?php endif; ?> 
         </div>
     </nav>
     <div class="container">
