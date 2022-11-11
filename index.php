@@ -1,16 +1,18 @@
 <?php
     session_start();
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     include_once('init.php');
-       
+   
+    $token = $_SESSION['token'] ?? $_COOKIE['token'] ?? null;
+    $user = authGetUser($token);
+    
     $url = $_GET['querysystemurl'] ?? '';
     $routes = include('routes.php');
     $resRouter = routeUrl($url, $routes);
     
     $cname = $resRouter['controller'] ?? 'index';
-    define('URL_PARAMS', $resRouter['params']);
     
-
+    define('URL_PARAMS', $resRouter['params']);
     $path = "controller/$cname.php";
     
     $pageTitle = "error 404";
@@ -33,7 +35,8 @@
             'title' => $pageTitle,
             'content' => $pageContent,
             'pageLeft' => $pageLeft,
-            'pageH1' => $pageH1
+            'pageH1' => $pageH1,
+            'user' => $user
         ]
         );
     echo $html;

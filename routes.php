@@ -26,4 +26,16 @@ return [
         'controller' => 'calls/call',
         'params' => ['id' => 1]
     ],
+    [
+        'test' => '/^login\/?$/',
+        'controller' => 'auth/login',
+    ],
+    [
+        'test' => '/^logup\/?$/',
+        'controller' => 'auth/logup',
+    ],
+    [
+        'test' => '/^logout\/?$/',
+        'controller' => 'auth/logout',
+    ]
 ];

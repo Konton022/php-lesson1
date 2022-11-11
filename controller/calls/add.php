@@ -1,5 +1,10 @@
 <?php
 
+if (is_null($user)){
+    header('Location:'.BASE_URL.'login');
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fields = extractFields($_POST, ['phone']);
     $params = [
