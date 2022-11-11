@@ -20,7 +20,7 @@ function getUserById($id){
 };
 
 function registerUser($params) {
-    $sql = "INSERT INTO users (login, password, email, name) VALUES (:login, :password :email, :name)";
+    $sql = "INSERT INTO users (login, password, email, name) VALUES (:login, :password, :email, :name)";
     $query = dbQuery($sql, $params);
     return true;
 }
